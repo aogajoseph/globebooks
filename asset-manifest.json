@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/globebooks/static/css/main.3c3c888c.css",
+    "main.js": "/globebooks/static/js/main.9ade5e66.js",
+    "static/js/453.b71f9089.chunk.js": "/globebooks/static/js/453.b71f9089.chunk.js",
+    "index.html": "/globebooks/index.html",
+    "main.3c3c888c.css.map": "/globebooks/static/css/main.3c3c888c.css.map",
+    "main.9ade5e66.js.map": "/globebooks/static/js/main.9ade5e66.js.map",
+    "453.b71f9089.chunk.js.map": "/globebooks/static/js/453.b71f9089.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c3c888c.css",
+    "static/js/main.9ade5e66.js"
+  ]
+}
