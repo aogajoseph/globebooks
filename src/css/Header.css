@@ -1,5 +1,130 @@
 .header {
-    background-color: rgb(13, 204, 13);
-    margin: 0;
-    padding: 10rem 2rem;
+  background: linear-gradient(#57b7e050, rgba(199, 81, 191, 0.678)), url("/public/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 60px 20px;
+  height: 65vh;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.navbar-logo .logo {
+  width: 100px;
+  margin: 0 20px;
+}
+
+.navbar-buttons {
+  display: flex;
+}
+
+.navbar-buttons .btn {
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.navbar-buttons .btn:hover {
+  color: white;
+  background-color: rgb(150, 139, 139);
+}
+
+.btn-signin {
+  background-color: #57b7e0;
+  margin-right: 40px;
+  border: 2px solid white;
+}
+
+.btn-signup {
+  background-color: #57b7e0;
+  margin-right: 10px;
+}
+
+/* Header content styles */
+.header-content {
+  margin-top: 130px;
+}
+
+.header-title {
+  font-size: 3.5rem;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
+.header-description {
+  font-size: 1.2rem;
+  margin-top: -1rem;
+  color: whitesmoke;
+  opacity: 0.75;
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.search-input-container {
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px; /* Add right padding to make space for the icon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: rgb(177, 156, 156);
+  padding-left: 10px;
+}
+
+.search-icon {
+  position: absolute;
+  padding-right: 8px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(139, 5, 139, 0.849);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-description {
+    font-size: 1rem;
+  }
+
+  .navbar-buttons .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
 }

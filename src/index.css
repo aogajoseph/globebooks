@@ -12,6 +12,33 @@ code {
     monospace;
 }
 
-p {
-  font-weight: 800;
+input {
+  border: none;
+  outline: 0;
+  font-family: inherit;
+  font-size: 1.6rem;
+}
+
+/* layout */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-sb {
+  justify-content: space-between;
+}
+
+.flex-c {
+  justify-content: center;
 }
