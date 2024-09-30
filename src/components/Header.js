@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaSearch } from "react-icons/fa";
 import Logo from '../images/logo.png';
 import '../css/Header.css';
 
 const Header = ({ query, setQuery}) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="header">
+    <header className='header'>
       {/* Navbar */}
-      <nav className="navbar">
+      <nav className= {`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-logo">
           <img src={Logo} alt="Logo" className="logo" />
         </div>
@@ -30,7 +44,7 @@ const Header = ({ query, setQuery}) => {
             <input 
               type="text" 
               className="search-input" 
-              placeholder="Search by title..." 
+              placeholder="Search book by title..." 
               value={query} 
               onChange={(e) => setQuery(e.target.value)} 
             />

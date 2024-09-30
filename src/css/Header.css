@@ -12,11 +12,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
-  position: absolute;
+  background-color: transparent;
+  padding: 10px 0;
+  transition: background-color 0.4s ease, padding 0.4s ease;
+  box-shadow: none;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background-color: #f0e4e4;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo .logo {
@@ -66,7 +76,7 @@
 
 .header-description {
   font-size: 1.2rem;
-  margin-top: -1rem;
+  margin-top: 2.5rem;
   color: whitesmoke;
   opacity: 0.75;
 }
@@ -95,7 +105,6 @@
 
 .search-input::placeholder {
   color: rgb(177, 156, 156);
-  padding-left: 10px;
 }
 
 .search-icon {
