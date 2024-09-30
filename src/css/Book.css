@@ -4,7 +4,7 @@
     padding: 1rem;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: rgba(25, 109, 109, 0.658) 0px 4px 12px;
+    box-shadow: rgba(109, 49, 25, 0.658) 0px 4px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -78,13 +78,20 @@
     margin-bottom: 0.2rem;
 }
 
-.highlight {
+.focus {
     text-align: left;
     font-size: 1rem;
     color: #333;
     line-height: 1.4;
     margin: .05rem 0;
     font-weight: 600;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 0 1.5px;
+    border-radius: 2px;
 }
 
 .download-links {

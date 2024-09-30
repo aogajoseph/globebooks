@@ -1,8 +1,19 @@
 import React from 'react';
 import '../css/Book.css';
 
-const Book = ({ book }) => {
-  // Function to determine the age rating
+const highlightText = (text, query) => {
+    if (!query) return text;
+    const parts = text.split(new RegExp(`(${query})`, 'gi'));
+    return parts.map((part, index) =>
+      part.toLowerCase() === query.toLowerCase() ? (
+        <span key={index} className="highlight">{part}</span>
+      ) : (
+        part
+      )
+    );
+};
+
+const Book = ({ book, query }) => {
   const getAgeRating = (category) => {
     switch(category.toLowerCase()) {
       case 'fiction':
@@ -27,9 +38,9 @@ const Book = ({ book }) => {
 
       {/* Book Details */}
       <div className="details">
-        <h3 className="title">{book.title}</h3>
-        <p className="author">By: {book.author}</p>
-        <p className="category">Category: {book.category}</p>
+        <h3 className="title">{highlightText(book.title, query)}</h3>
+        <p className="author">{highlightText(`By: ${book.author}`, query)}</p>
+        <p className="category">{highlightText(`Category: ${book.category}`, query)}</p>
 
         {/* Description */}
         <p className="description">Description: {book.description}</p>
@@ -50,7 +61,7 @@ const Book = ({ book }) => {
         <a href={book.pdfLink} download className="download-link">
           <p>Download Free Copy</p>
         </a>
-        <p className="highlight">Don't like reading?</p>
+        <p className="focus">Don't like reading?</p>
         <a href={book.audioLink} download className="download-link">
           Download audiobook
         </a>

@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import Logo from '../images/logo.png';
 import '../css/Header.css';
 
-const Header = () => {
+const Header = ({ query, setQuery}) => {
   return (
     <header className="header">
       {/* Navbar */}
@@ -27,7 +27,13 @@ const Header = () => {
         {/* Search Input */}
         <div className="search-bar">
           <div className='search-input-container'>
-            <input type="text" className="search-input" placeholder="Search by title..." />
+            <input 
+              type="text" 
+              className="search-input" 
+              placeholder="Search by title..." 
+              value={query} 
+              onChange={(e) => setQuery(e.target.value)} 
+            />
             <FaSearch className="search-icon" />
           </div>
         </div>
