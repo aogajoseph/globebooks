@@ -59,7 +59,7 @@ const Book = ({ book, query }) => {
       {/* Download Links */}
       <div className="download-links">
         <a href={book.pdfLink} download className="download-link">
-          <p>Download Free Copy</p>
+          <p>Get a Free Copy</p>
         </a>
         <p className="focus">Don't like reading?</p>
         <a href={book.audioLink} download className="download-link">

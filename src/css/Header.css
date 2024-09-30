@@ -4,7 +4,8 @@
   background-position: center;
   text-align: center;
   padding: 60px 20px;
-  height: 65vh;
+  height: 60vh;
+  margin-bottom: -40px;
 }
 
 /* Navbar styles */

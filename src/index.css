@@ -5,6 +5,10 @@
   --linkedin-hex: #0077B5;
 }
 
+html {
+  background-color: rgba(233, 228, 228, 0.548);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
