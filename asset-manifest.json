@@ -1,20 +1,32 @@
 {
   "files": {
-    "main.css": "/globebooks/static/css/main.5d995869.css",
-    "main.js": "/globebooks/static/js/main.b760a5c9.js",
+    "main.css": "/globebooks/static/css/main.61655fc3.css",
+    "main.js": "/globebooks/static/js/main.5002f080.js",
     "static/js/453.b71f9089.chunk.js": "/globebooks/static/js/453.b71f9089.chunk.js",
+    "static/media/Book10.png": "/globebooks/static/media/Book10.8212071f0d9c477b0ecf.png",
+    "static/media/Book8.png": "/globebooks/static/media/Book8.9c2b09d4131079203e82.png",
+    "static/media/Book7.png": "/globebooks/static/media/Book7.5da2780680fa75f238d4.png",
+    "static/media/Book5.png": "/globebooks/static/media/Book5.53af165848d2758877d1.png",
+    "static/media/Book3.png": "/globebooks/static/media/Book3.fabc97349a093fd6fe4c.png",
+    "static/media/Book12.png": "/globebooks/static/media/Book12.762bb1c5b367e59589db.png",
+    "static/media/Book2.png": "/globebooks/static/media/Book2.c43567e9a64ef467e39b.png",
+    "static/media/Book9.png": "/globebooks/static/media/Book9.8ff4d4e25b4ba9e5cfc6.png",
+    "static/media/Book11.png": "/globebooks/static/media/Book11.34ee26b32c50b41b603a.png",
+    "static/media/Book4.png": "/globebooks/static/media/Book4.dec9ac904f74cd73a93b.png",
+    "static/media/Book1.png": "/globebooks/static/media/Book1.9faf0f5b2b22a7c2a6f8.png",
+    "static/media/Book6.png": "/globebooks/static/media/Book6.7ac4596d2b4f81f4d77d.png",
     "static/media/Terms.pdf": "/globebooks/static/media/Terms.780d2cb196a3450aa0ec.pdf",
     "static/media/Security.pdf": "/globebooks/static/media/Security.b6bedd5b063e7fb07c93.pdf",
     "static/media/Privacy.pdf": "/globebooks/static/media/Privacy.55a734f9361a5ae0e3f9.pdf",
     "static/media/Cookie.pdf": "/globebooks/static/media/Cookie.8c18a06b000e6d8595ae.pdf",
     "static/media/header-bg.jpg": "/globebooks/static/media/header-bg.d3cabccfff25a737c222.jpg",
     "index.html": "/globebooks/index.html",
-    "main.5d995869.css.map": "/globebooks/static/css/main.5d995869.css.map",
-    "main.b760a5c9.js.map": "/globebooks/static/js/main.b760a5c9.js.map",
+    "main.61655fc3.css.map": "/globebooks/static/css/main.61655fc3.css.map",
+    "main.5002f080.js.map": "/globebooks/static/js/main.5002f080.js.map",
     "453.b71f9089.chunk.js.map": "/globebooks/static/js/453.b71f9089.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d995869.css",
-    "static/js/main.b760a5c9.js"
+    "static/css/main.61655fc3.css",
+    "static/js/main.5002f080.js"
   ]
 }
