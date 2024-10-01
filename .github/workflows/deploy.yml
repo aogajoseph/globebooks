@@ -13,17 +13,11 @@ jobs:
     - name: Checkout master branch
       uses: actions/checkout@v2
 
-    - name: Clean Git Working Directory
-      run: git reset --hard HEAD
-
     - name: Install dependencies
       run: npm install
 
     - name: Build the React app
       run: npm run build
-
-    - name: Configure Git
-      run: git config --global user.name "aogajoseph"  git config --global user.email "aogathesecond@gmail.com"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
