@@ -19,6 +19,10 @@ jobs:
     - name: Build the React app
       run: npm run build
 
+    - name: Configure Git
+      run: git config --global user.name "aogajoseph"  git config --global user.email "aogathesecond@gmail.com"
+
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
