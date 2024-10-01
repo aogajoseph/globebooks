@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import Logo from '../images/logo.png';
 import '../css/Header.css';
 
@@ -23,11 +24,13 @@ const Header = ({ query, setQuery}) => {
       {/* Navbar */}
       <nav className= {`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-logo">
-          <img src={Logo} alt="Logo" className="logo" />
+          <Link to='/'>
+            <img src={Logo} alt="Logo" className="logo" />
+          </Link>
         </div>
         <div className="navbar-buttons">
-          <button className="btn btn-signup">Create Account</button>
-          <button className="btn btn-signin">Sign In</button>
+          <Link to="/register" className="btn btn-signup">Create Account</Link> 
+          <Link to="/signin" className="btn btn-signin">Sign In</Link>
         </div>
       </nav>
 

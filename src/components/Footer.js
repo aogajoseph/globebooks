@@ -3,6 +3,7 @@ import { FaYoutubeSquare } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 import Logo from '../images/logo.png';
 import Terms from '../images/Terms.pdf';
 import Privacy from '../images/Privacy.pdf';
@@ -16,7 +17,9 @@ const Footer = () => {
             <div className="footer section-padding">
                 <div className="footer-links">
                     <div className="footer-description">
-                        <img src={Logo} alt='Logo' className="footer-logo" />
+                        <Link to='/'>
+                            <img src={Logo} alt='Logo' className="footer-logo" />
+                        </Link>
                         <p className="footer-description">Experience creativity with Globebooks, a library of eBooks, audiobooks and animated videos. Globebooks is operated by Globe Technologies.</p>
                     </div>
                     <div className="footer-links-div">
@@ -27,7 +30,6 @@ const Footer = () => {
                     <div className="footer-links-div">
                         <h4>Get in Touch</h4>
                         <p>Remote</p>
-                        <p>Nairobi, Kenya.</p>
                         <a href="mailto:globeheadquarters@gmail.com" className="important-links"><p>globeheadquarters@gmail.com</p></a>
                     </div>
                     <div className="footer-links-div">
