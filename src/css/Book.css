@@ -211,7 +211,7 @@
         flex-direction: column;
         justify-content: space-between;
         transition: transform 0.2s ease-in-out;
-        margin: 15px;
+        margin: 0 15px;
     }
 
     .cover {
@@ -220,7 +220,6 @@
         object-fit: cover;
         border-radius: 1px;
         margin: 0.8rem 1.25rem;
-    
     }
 
     .navbar-logo .logo {

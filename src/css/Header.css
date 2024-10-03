@@ -114,77 +114,12 @@
 
 /* Media Query for Tablets (768px and below) */
 @media only screen and (max-width: 768px) {
-  .header {
-    padding: 40px 15px;
-    height: 50vh;
-  }
-
-  .header-title {
-    font-size: 2.5rem;
-  }
-
-  .header-description {
-    font-size: 1rem;
-    margin-top: 2rem;
-  }
-
-  .search-input-container {
-    width: 90%;
-  }
-
-  .navbar-logo .logo {
-    width: 80px;
-    margin: 0 20px;
-  }
-
-  .navbar-buttons .btn {
-    font-size: 12px;
-    padding: 8px 15px;
-  }
+  
 }
 
 /* Media Query for Mobile Devices (600px and below) */
 @media only screen and (max-width: 600px) {
-  .header {
-    padding: 30px 10px;
-    height: 50vh;
-  }
 
-  .header-title {
-    font-size: 2rem;
-  }
-
-  .header-description {
-    font-size: 0.9rem;
-  }
-
-  .search-input-container {
-    width: 100%;
-  }
-
-  .navbar {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .navbar-logo .logo {
-    width: 70px;
-    margin: 0;
-  }
-
-  .navbar-buttons {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .navbar-buttons .btn {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-
-  .search-bar {
-    margin-top: 2rem;
-  }
 }
 
 /* Media Query for Extra Small Devices (480px and below) */
@@ -205,11 +140,7 @@
   }
 
   .navbar {
-    background-color: transparent;
-    transition: background-color 0.4s ease, padding 0.4s ease;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+    width: fit-content;
     position: fixed;
     top: 0;
     left: 0;
