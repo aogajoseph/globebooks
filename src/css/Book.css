@@ -139,7 +139,8 @@
 }
 
 /* resposiveness */
-@media screen and (max-width: 576px) {
+/* For tablets in portrait mode or smaller screens */
+@media only screen and (max-width: 768px) {
     .book {
         position: relative;
         width: 250px;
@@ -153,16 +154,23 @@
         transition: transform 0.2s ease-in-out;
         margin: 15px;
     }
+    
     .cover {
-        width: 25%;
+        width: 75%;
         height: 180px;
         object-fit: cover;
         border-radius: 1px;
         margin: 0.8rem 1.25rem;
     }
+  
+    .navbar-logo .logo {
+      width: 100px;
+      margin: 0 40px 0 20px;
+    }
 }
-
-@media screen and (max-width: 768px) {
+  
+  /* For small devices like phones in landscape mode */
+  @media only screen and (max-width: 600px) {
     .book {
         position: relative;
         width: 250px;
@@ -176,39 +184,23 @@
         transition: transform 0.2s ease-in-out;
         margin: 15px;
     }
+
     .cover {
-        width: 25%;
+        width: 75%;
         height: 180px;
         object-fit: cover;
         border-radius: 1px;
         margin: 0.8rem 1.25rem;
     }
-}
 
-@media screen and (max-width: 992px) {
-    .book {
-        position: relative;
-        width: 350px;
-        padding: 1rem;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: transform 0.2s ease-in-out;
-        margin: 15px;
-    }
-    .cover {
-        width: 25%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 1px;
-        margin: 0.8rem 1.25rem;
+    .navbar-logo .logo {
+        width: 60px;
+        margin: 0 100px 0 20px;
     }
 }
-
-@media screen and (max-width: 1200px) {
+  
+  /* For extra small devices like phones in portrait mode */
+  @media only screen and (max-width: 480px) {
     .book {
         position: relative;
         width: 250px;
@@ -222,11 +214,18 @@
         transition: transform 0.2s ease-in-out;
         margin: 15px;
     }
+
     .cover {
-        width: 50%;
+        width: 75%;
         height: 180px;
         object-fit: cover;
         border-radius: 1px;
         margin: 0.8rem 1.25rem;
+    
+    }
+
+    .navbar-logo .logo {
+        width: 60px;
+        margin: 0 100px 0 20px;
     }
 }
