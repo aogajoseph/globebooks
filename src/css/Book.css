@@ -123,7 +123,7 @@
     justify-content: space-around;
 }
 
-.no-results {
+.error-message {
     background-color: #c4ba92;
     color: #da0404;
     border: 1px solid #c41414;
@@ -135,7 +135,6 @@
     width: 80%;
     margin: 20px auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801);
-
 }
 
 /* resposiveness */

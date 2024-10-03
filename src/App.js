@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
+import UserPage from './pages/UserPage';
 import Shelf from './components/Shelf';
 import Footer from './components/Footer';
 
@@ -12,7 +13,6 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Home route with Header, Shelf, and Footer */}
         <Route path="/" element={
           <>
             <Header query={query} setQuery={setQuery} />
@@ -20,12 +20,9 @@ const App = () => {
             <Footer />
           </>
         } />
-
-        {/* Sign Up page (without Header, Shelf, Footer) */}
         <Route path="/register" element={<Register />} />
-
-        {/* Sign In page (without Header, Shelf, Footer) */}
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/user" element={<UserPage />} />
       </Routes>
     </Router>
   );

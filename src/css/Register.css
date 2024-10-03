@@ -90,18 +90,38 @@
     color: #303233;
 }
   
-/* Sign in link */
+/* Sign in link and terms */
 .signup-text {
     margin-top: 20px;
     color: #e6dcdc;
 }
   
-.signin-link {
+.signin-link, .terms-link {
     color: #57b7e0;
-    text-decoration: none;
+    text-decoration: underline;
 }
   
-.signin-link:hover {
-    text-decoration: underline;
-    color: #ddd;
+.signin-link:hover, .terms-link:hover {
+    text-decoration: none;
+    color: #574a4a;
+}
+
+.terms-div input {
+    width: auto;
+    height: auto;
+}
+
+.signup-form .terms-div {
+    display: flex;
+    gap: 2px;
+}
+
+input[type="checkbox"] {
+    margin: 1px 2px 0 10px;
+}
+
+.terms-div label {
+    display: block;
+    margin: 1px 10px;
+    color: #ece2e2;
 }
