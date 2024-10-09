@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import UserPage from './pages/UserPage';
+import ResetPassword from './pages/ResetPassword';
 import Shelf from './components/Shelf';
 import Footer from './components/Footer';
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/user" element={<UserPage />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </Router>
   );

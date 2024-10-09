@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'; // Import necessary Firebase methods
-import { auth } from '../firebase'; // Import Firebase configuration
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
 import '../css/SignIn.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(''); // For success messages
-  const navigate = useNavigate(); // For navigation after sign-in
+  const navigate = useNavigate();
 
   const handleSignIn = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
     setError(''); // Clear previous error messages
 
     try {
@@ -22,20 +21,24 @@ const SignIn = () => {
       navigate('/user');
     } catch (err) {
       console.error('Error signing in:', err);
-      setError(err.message); // Set error message for display
-    }
-  };
-
-  const handleForgotPassword = async () => {
-    setError(''); // Clear previous error messages
-    setSuccess(''); // Clear previous success messages
-
-    try {
-      await sendPasswordResetEmail(auth, email);
-      setSuccess('Password reset email sent! Check your inbox.'); // Success message
-    } catch (err) {
-      console.error('Error sending password reset email:', err);
-      setError(err.message); // Set error message for display
+      // Customize the error message based on the error code
+      switch (err.code) {
+        case 'auth/invalid-email':
+          setError('The email address is not valid. Please try again.');
+          break;
+        case 'auth/user-disabled':
+          setError('This account has been disabled. Please contact support.');
+          break;
+        case 'auth/user-not-found':
+          setError('No account found with this email. Please sign up.');
+          break;
+        case 'auth/wrong-password':
+          setError('The password is incorrect. Please try again.');
+          break;
+        default:
+          setError('Wrong Email or Password');
+          break;
+      }
     }
   };
 
@@ -43,7 +46,7 @@ const SignIn = () => {
     <div className="signin-container">
       <div className="signin-background">
         <div className="signin-card">
-          <h2 className="signin-title">Welcome Back</h2>
+          <h2 className="signin-title">Sign In</h2>
           <form className="signin-form" onSubmit={handleSignIn}>
             <div className="form-group">
               <label>Email</label>
@@ -65,15 +68,14 @@ const SignIn = () => {
                 required
               />
             </div>
-            {error && <p className="error-message">{error}</p>} {/* Display error message */}
-            {success && <p className="success-message">{success}</p>} {/* Display success message */}
+            {error && <p className="error-message">{error}</p>} {/* Display custom error message */}
             <button type="submit" className="signin-btn">Sign In</button>
           </form>
           <p className="signin-text">
             Don’t have an account? <Link to="/register" className="signup-link">Sign Up</Link>
           </p>
           <p className="forgot-password-text">
-            <button onClick={handleForgotPassword} className="forgot-password-link">Forgot Password?</button>
+            <Link to="/reset-password" className="forgot-password-link">Forgot Password?</Link>
           </p>
         </div>
       </div>

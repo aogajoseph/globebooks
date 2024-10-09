@@ -66,6 +66,25 @@
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
 }
 
+/* Password styling */
+.password-input-wrapper {
+    position: relative;
+  }
+  
+  .password-input-wrapper input {
+    width: 92%;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #5a5858;
+  }
+  
+
 ::placeholder {
     color: rgba(92, 91, 91, 0.856);
     font-style: italic;
@@ -87,7 +106,7 @@
   
 .signup-btn:hover {
     background-color: #ddd;
-    color: #303233;
+    color: #989da0;
 }
   
 /* Sign in link and terms */
@@ -104,6 +123,7 @@
 .signin-link:hover, .terms-link:hover {
     text-decoration: none;
     color: #574a4a;
+    text-decoration: underline;
 }
 
 .terms-div input {

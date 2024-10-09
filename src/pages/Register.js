@@ -3,16 +3,28 @@ import { useNavigate, Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
-import Terms from '../images/Terms.pdf'; // Ensure this path is correct
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
+import Terms from '../images/Terms.pdf';
 import '../css/Register.css';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
-  const [acceptTerms, setAcceptTerms] = useState(false); // State for terms acceptance
+  const [acceptTerms, setAcceptTerms] = useState(false);
   const navigate = useNavigate();
+
+  // Define custom error messages
+  const customErrorMessages = {
+    'auth/email-already-in-use': 'This email is already in use. Please sign in or use another email.',
+    'auth/invalid-email': 'The email address you entered is not valid. Please check and try again.',
+    'auth/weak-password': 'Your password is too weak. Please use at least 6 characters.',
+    'auth/network-request-failed': 'Network error. Please check your internet connection and try again.',
+    // Add any other Firebase error codes and your custom messages here
+    default: 'An unexpected error occurred. Please try again later.',
+  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -20,7 +32,7 @@ const Register = () => {
 
     if (!acceptTerms) {
       setError('You must accept the terms of service.');
-      return; // Exit if terms are not accepted
+      return;
     }
 
     try {
@@ -38,13 +50,14 @@ const Register = () => {
       // Redirect to user dashboard or homepage
       navigate('/user');
     } catch (err) {
-      // Handle 'email already in use' error
-      if (err.code === 'auth/email-already-in-use') {
-        setError('This email is already in use. Please sign in or reset your password.');
-      } else {
-        setError(err.message); // Other errors
-      }
+      // Check if there's a custom error message for the error code, otherwise use default
+      const errorMessage = customErrorMessages[err.code] || customErrorMessages.default;
+      setError(errorMessage);
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
   };
 
   return (
@@ -75,13 +88,18 @@ const Register = () => {
             </div>
             <div className="form-group">
               <label>Password</label>
-              <input
-                type="password"
-                placeholder="Create a password..."
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <div className="password-input-wrapper">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Create a password..."
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
             </div>
 
             <div className="form-group terms-div">
@@ -89,7 +107,7 @@ const Register = () => {
                 type="checkbox"
                 id="accept-terms"
                 checked={acceptTerms}
-                onChange={() => setAcceptTerms(!acceptTerms)} // Toggle checkbox state
+                onChange={() => setAcceptTerms(!acceptTerms)}
                 required
               />
               <label htmlFor="accept-terms">
