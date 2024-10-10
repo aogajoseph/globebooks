@@ -11,7 +11,7 @@ import Book10 from '../images/Book10.png'
 import Book11 from '../images/Book11.png'
 import Book12 from '../images/Book12.png'
 
-const books = [
+export const books = [
   {
     price: 15.99,
     cover: Book1,
@@ -157,5 +157,3 @@ const books = [
     youtubeLink: 'https://www.youtube.com/channel-link2'
   }
 ];
-
-export default books;

@@ -36,10 +36,10 @@ const ResetPassword = () => {
         <h2 className="reset-password-title">Reset Password</h2>
         <form className="reset-password-form" onSubmit={handleResetPassword}>
           <div className="form-group">
-            <label>Enter email to get password reset link</label>
+            <label>Enter your email to get a password reset link</label>
             <input
               type="email"
-              placeholder="Enter your email here..."
+              placeholder="Enter email..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -47,7 +47,7 @@ const ResetPassword = () => {
           </div>
           {error && <p className="error-message">{error}</p>} {/* Display custom error message */}
           {message && <p className="success-message">{message}</p>} {/* Display success message */}
-          <button type="submit" className="reset-password-btn">Send Link</button>
+          <button type="submit" className="reset-password-btn">Get Link</button>
         </form>
         <p className="reset-password-text">
           Remembered your password? <Link to="/signin" className="signin-link">Sign In</Link>

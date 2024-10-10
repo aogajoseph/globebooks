@@ -1,6 +1,6 @@
 import React from 'react';
 import Book from './Book';
-import books from '../data/books';
+import {books} from '../data/books';
 
 const Shelf = ({ query }) => {
 
@@ -24,7 +24,7 @@ const Shelf = ({ query }) => {
                     <Book key={index} book={book} query={query} /> 
                 ))
             ) : ( 
-                <p className="error-message">Oops! No matching books found.</p> 
+                <p className="error-message">Oops! No results matched your query.</p> 
             )}
         
         </div>

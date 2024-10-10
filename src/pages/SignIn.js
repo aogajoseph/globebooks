@@ -69,7 +69,7 @@ const SignIn = () => {
               />
             </div>
             {error && <p className="error-message">{error}</p>} {/* Display custom error message */}
-            <button type="submit" className="signin-btn">Sign In</button>
+            <button type="submit" className="signin-btn ">Sign In</button>
           </form>
           <p className="signin-text">
             Don’t have an account? <Link to="/register" className="signup-link">Sign Up</Link>

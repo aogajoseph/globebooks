@@ -16,16 +16,6 @@ const Register = () => {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const navigate = useNavigate();
 
-  // Define custom error messages
-  const customErrorMessages = {
-    'auth/email-already-in-use': 'This email is already in use. Please sign in or use another email.',
-    'auth/invalid-email': 'The email address you entered is not valid. Please check and try again.',
-    'auth/weak-password': 'Your password is too weak. Please use at least 6 characters.',
-    'auth/network-request-failed': 'Network error. Please check your internet connection and try again.',
-    // Add any other Firebase error codes and your custom messages here
-    default: 'An unexpected error occurred. Please try again later.',
-  };
-
   const handleRegister = async (e) => {
     e.preventDefault();
     setError(''); // Clear previous errors
@@ -50,9 +40,25 @@ const Register = () => {
       // Redirect to user dashboard or homepage
       navigate('/user');
     } catch (err) {
-      // Check if there's a custom error message for the error code, otherwise use default
-      const errorMessage = customErrorMessages[err.code] || customErrorMessages.default;
-      setError(errorMessage);
+      console.error('Error during registration:', err);
+      // Customize the error message based on the error code
+      switch (err.code) {
+        case 'auth/email-already-in-use':
+          setError('This email is already in use. Please sign in or use another email.');
+          break;
+        case 'auth/invalid-email':
+          setError('The email address you entered is not valid. Please check and try again.');
+          break;
+        case 'auth/weak-password':
+          setError('Your password is too weak. Please use at least 6 characters.');
+          break;
+        case 'auth/network-request-failed':
+          setError('Network error. Please check your internet connection and try again.');
+          break;
+        default:
+          setError('An unexpected error occurred. Please try again later.');
+          break;
+      }
     }
   };
 
@@ -116,7 +122,9 @@ const Register = () => {
             </div>
 
             {error && <p className="error-message">{error}</p>}
-            <button type="submit" className="signup-btn" disabled={!acceptTerms}>Create Account</button>
+            <button type="submit" className="signup-btn" disabled={!acceptTerms}>
+              <Link to='/user'></Link>
+              Create Account</button>
           </form>
           <p className="signup-text">
             Already have an account? <Link to="/signin" className="signin-link">Sign In</Link>
