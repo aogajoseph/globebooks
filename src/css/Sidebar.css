@@ -1,0 +1,120 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    transition: width 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+  
+.sidebar.closed {
+    width: 60px; /* Reduced width when closed */
+}
+  
+/* Hide sidebar text when closed */
+.sidebar-links a span, .username {
+    display: block; /* Default is visible */
+}
+  
+.sidebar.closed .sidebar-links a span, 
+.sidebar.closed .username {
+    display: none; /* Hide text when sidebar is closed */
+}
+  
+.sidebar-toggle {
+    position: absolute;
+    top: 50%;
+    right: -15px; /* Offset to the right of the sidebar */
+    transform: translateY(-50%);
+    background: #1a1a1a;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 20px;
+    padding-top: 28px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+  
+.sidebar-toggle:hover {
+    background-color: #333;
+}
+  
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+  
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+  
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
+  
+.sidebar-links li {
+    margin-bottom: 20px;
+}
+  
+.sidebar-links a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+  
+.sidebar-links a .icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.logout {
+    margin-bottom: 2rem;
+}
+
+/* Only show icon when sidebar is closed */
+.sidebar.closed .sidebar-links a .icon {
+    margin-right: 0; /* Remove margin when only showing icons */
+}
+  
+.sidebar-links a:hover {
+    background-color: #333;
+}
+  
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+}
+  
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+  
+.sidebar-footer a:hover {
+    background-color: #333;
+}  

@@ -1,18 +1,28 @@
 import React from 'react';
-import Header from '../components/Header';
-import Shelf from '../components/UserShelf';
-import Footer from '../components/Footer';
-import { books } from '../data/books';
+import Sidebar from '../components/Sidebar';
+// import Header from './Header';
+// import Library from './Library';
+// import Recommendations from './Recommendations';
+// import Discover from './Discover';
+// import Downloads from './Downloads';
+// import AccountSettings from './AccountSettings';
+// import Footer from './Footer';
 
-const UserPage = ({ username }) => {
-  // Add any state for filtering if needed
-  const [query, setQuery] = React.useState('');
-
+const UserPage = () => {
   return (
-    <div>
-      <Header query={query} setQuery={setQuery} />
-      <Shelf books={books} query={query} /> {/* Pass books and query */}
-      <Footer />
+    <div className="dashboard-container">
+      <Sidebar />
+      <div className="main-content">
+        {/* <Header /> */}
+        {/* Default view can be My Library or based on user choice */}
+        {/* <Library />  */}
+        {/* Other components can be routed based on user action */}
+        {/* <Recommendations /> */}
+        {/* <Discover /> */}
+        {/* <Downloads /> */}
+        {/* <AccountSettings /> */}
+        {/* <Footer /> */}
+      </div>
     </div>
   );
 };
