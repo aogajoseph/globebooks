@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
 import '../css/SignIn.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -42,6 +44,10 @@ const SignIn = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
   return (
     <div className="signin-container">
       <div className="signin-background">
@@ -60,16 +66,21 @@ const SignIn = () => {
             </div>
             <div className="form-group">
               <label>Password</label>
-              <input
-                type="password"
-                placeholder="Enter your password..."
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <div className="password-input-wrapper">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Enter your password..."
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
             </div>
             {error && <p className="error-message">{error}</p>} {/* Display custom error message */}
-            <button type="submit" className="signin-btn ">Sign In</button>
+            <button type="submit" className="signin-btn">Sign In</button>
           </form>
           <p className="signin-text">
             Don’t have an account? <Link to="/register" className="signup-link">Sign Up</Link>

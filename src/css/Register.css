@@ -69,20 +69,20 @@
 /* Password styling */
 .password-input-wrapper {
     position: relative;
-  }
+}
   
-  .password-input-wrapper input {
+.password-input-wrapper input {
     width: 92%;
-  }
+}
   
-  .password-toggle-icon {
+.password-toggle-icon {
     position: absolute;
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: #5a5858;
-  }
+}
   
 
 ::placeholder {

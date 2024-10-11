@@ -65,6 +65,24 @@
     border-color: #3498db;
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
 }
+
+/* password styling */
+.password-input-wrapper {
+    position: relative;
+}
+  
+.password-input-wrapper input {
+    width: 92%;
+}
+  
+.password-toggle-icon {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #5a5858;
+}  
   
 /* Button styling */
 .signin-btn {
