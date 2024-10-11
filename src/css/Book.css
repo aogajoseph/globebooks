@@ -94,12 +94,12 @@
     border-radius: 2px;
 }
 
-.download-links {
+.download-links, .user-signup-links {
     display: flex;
     flex-direction: column;
 }
 
-.download-link {
+.download-link, .user-signup-link {
     text-align: left;
     color: blue;
     font-size: .8rem;
@@ -108,7 +108,7 @@
     cursor: pointer;
 }
 
-.download-link:hover {
+.download-link:hover, .user-signup-link:hover {
     color: #757677;
     text-decoration: underline;
     font-size: .75rem;

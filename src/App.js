@@ -5,7 +5,7 @@ import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import UserPage from './pages/UserPage';
 import ResetPassword from './pages/ResetPassword';
-import Shelf from './components/Shelf';
+import Shelf from './components/PreviewShelf';
 import Footer from './components/Footer';
 
 const App = () => {

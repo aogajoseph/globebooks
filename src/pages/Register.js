@@ -70,7 +70,7 @@ const Register = () => {
     <div className="signup-container">
       <div className="signup-background">
         <div className="signup-card">
-          <h2 className="signup-title">Welcome to Globebooks</h2>
+          <h2 className="signup-title">Create Account</h2>
           <form className="signup-form" onSubmit={handleRegister}>
             <div className="form-group">
               <label>Username</label>
@@ -117,7 +117,7 @@ const Register = () => {
                 required
               />
               <label htmlFor="accept-terms">
-                I accept the <a href={Terms} className="terms-link" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                Accept the <a href={Terms} className="terms-link" target="_blank" rel="noopener noreferrer">Terms of Service</a>
               </label>
             </div>
 
@@ -127,6 +127,9 @@ const Register = () => {
               Create Account</button>
           </form>
           <p className="signup-text">
+            <span>Creating an account on Globebooks is free and allows you to download eBooks and audiobooks.</span>
+            <br />
+            <br />
             Already have an account? <Link to="/signin" className="signin-link">Sign In</Link>
           </p>
         </div>

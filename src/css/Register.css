@@ -114,6 +114,11 @@
     margin-top: 20px;
     color: #e6dcdc;
 }
+
+.signup-text span {
+    line-height: .5rem;
+    color: #e5ebea;
+}
   
 .signin-link, .terms-link {
     color: #57b7e0;

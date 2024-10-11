@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Book.css';
 
 const highlightText = (text, query) => {
-    if (!query) return text;
-    const parts = text.split(new RegExp(`(${query})`, 'gi'));
-    return parts.map((part, index) =>
-      part.toLowerCase() === query.toLowerCase() ? (
-        <span key={index} className="highlight">{part}</span>
-      ) : (
-        part
-      )
-    );
+  if (!query) return text;
+  const parts = text.split(new RegExp(`(${query})`, 'gi'));
+  return parts.map((part, index) =>
+    part.toLowerCase() === query.toLowerCase() ? (
+      <span key={index} className="highlight">{part}</span>
+    ) : (
+      part
+    )
+  );
 };
 
 const Book = ({ book, query }) => {
@@ -57,14 +58,14 @@ const Book = ({ book, query }) => {
       </div>
 
       {/* Download Links */}
-      <div className="download-links">
-        <a href={book.pdfLink} download className="download-link">
-          <p>Get a Free Copy</p>
-        </a>
+      <div className="user-signup-links">
+        <Link to='/register' className="user-signup-link">
+            <p>Get a Free Copy</p>
+        </Link>
         <p className="focus">Don't like reading?</p>
-        <a href={book.audioLink} download className="download-link">
-          Download audiobook
-        </a>
+        <Link to='/register' className="user-signup-link">
+            Download audiobook
+        </Link>
         <a
           href={book.youtubeLink}
           target="_blank"

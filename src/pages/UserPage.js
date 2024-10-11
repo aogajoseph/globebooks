@@ -1,12 +1,10 @@
 import React from 'react';
 import Header from '../components/Header';
-import Shelf from '../components/Shelf';
+import Shelf from '../components/UserShelf';
 import Footer from '../components/Footer';
-import { books } from '../data/books'; // Assuming you import books from somewhere
+import { books } from '../data/books';
 
-import '../css/UserPage.css';
-
-const Home = ({ username }) => {
+const UserPage = ({ username }) => {
   // Add any state for filtering if needed
   const [query, setQuery] = React.useState('');
 
@@ -19,4 +17,4 @@ const Home = ({ username }) => {
   );
 };
 
-export default Home;
+export default UserPage;
