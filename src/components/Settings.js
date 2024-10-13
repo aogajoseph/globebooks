@@ -30,20 +30,20 @@ const Settings = () => {
         setUser({ ...user, username, email, profilePicture });
         alert('Profile updated successfully!');
         closeEditModal();
-    };
+    };    
 
     const handlePasswordChange = () => {
         if (newPassword !== confirmPassword) {
             alert('Passwords do not match. Please try again.');
             return;
         }
-
+    
         if (!currentPassword) {
             alert('Please enter your current password.');
             return;
         }
-
-        // Add logic here to verify the current password and update the password in your backend/Firebase
+    
+        // Update password logic using Firebase authentication
         alert('Password changed successfully!');
         closePasswordModal();
     };

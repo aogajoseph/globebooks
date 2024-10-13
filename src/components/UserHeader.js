@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { FaSearch, FaBell, FaDownload, FaCog, FaQuestionCircle, FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 import Logo from '../images/logo.png';
 import ProfilePic from '../images/profile-pic.png'; // Default Profile Picture
 import PreviewImg1 from '../images/Book1.png';
@@ -17,12 +18,12 @@ import PreviewImg11 from '../images/Book11.png';
 import PreviewImg12 from '../images/Book12.png';
 import '../css/UserHeader.css';
 
-const Header = ({ query, setQuery, username, profilePicture }) => {
+const Header = ({ query, setQuery }) => {
+    const { user } = useContext(UserContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const menuRef = useRef(null);
 
-    // Array of image paths for the slideshow
     const images = [
         PreviewImg1,
         PreviewImg2,
@@ -38,12 +39,10 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
         PreviewImg12,
     ];
 
-    // Toggle menu visibility
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Close the menu when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -57,7 +56,6 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
         };
     }, []);
 
-    // Rotate through images for the slideshow
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) =>
@@ -70,7 +68,6 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
 
     return (
         <header className='userheader'>
-            {/* Navbar */}
             <nav className='usernavbar'>
                 <div className="navbar-logo">
                     <Link to='/'>
@@ -78,7 +75,6 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
                     </Link>
                 </div>
 
-                {/* Search Input */}
                 <div className="search-bar">
                     <div className='search-input-container'>
                         <input 
@@ -96,12 +92,13 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
                     <FaBell className="notification-icon" />
 
                     <div className="profile-container" onClick={toggleMenu}> 
-                        <img src={profilePicture || ProfilePic} alt="Profile" className="profile-pic" />
+                        <img src={user.profilePicture || ProfilePic} alt="Profile" className="userprofile-pic" />
                     </div>
 
                     {isMenuOpen && (
                         <div className="profile-menu" ref={menuRef}>
-                            <p className="menu-username">{username}</p>
+                            <p className="menu-username">{user.username}</p>
+                            <p className="menu-email">{user.email}</p>
                             <Link to="/downloads">
                                 <FaDownload className="menu-icon" /> My Downloads
                             </Link>
@@ -119,15 +116,13 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
                 </div>
             </nav>
 
-            {/* userheader content */}
             <div className="userheader-content">
-                <h1 className="userheader-title">Welcome {username}</h1>
+                <h1 className="userheader-title">Welcome {user.username}</h1>
                 <p className="userheader-description">
                     Explore our library, Download your favourites or watch the stories come to life on <a href='https://youtube.com' className='youtube-link'>Globebooks</a> YouTube Channel.
                 </p>
             </div>
 
-            {/* Slideshow container */}
             <div className="slideshow">
                 <img 
                     src={images[currentImageIndex]} 
