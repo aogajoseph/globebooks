@@ -71,7 +71,7 @@ const Header = ({ query, setQuery, username, profilePicture }) => {
     return (
         <header className='userheader'>
             {/* Navbar */}
-            <nav className='navbar'>
+            <nav className='usernavbar'>
                 <div className="navbar-logo">
                     <Link to='/'>
                         <img src={Logo} alt="Logo" className="logo" />
