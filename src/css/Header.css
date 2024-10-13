@@ -37,7 +37,6 @@
 }
 
 .navbar-buttons .btn {
-  background-color: #57b7e0;
   border: 2px solid white;
   color: #000000;
   padding: 10px 20px;
@@ -52,7 +51,12 @@
   background-color: rgb(150, 139, 139);
 }
 
+.register-btn-header {
+  background-color: rgba(255, 0, 238, 0.678);
+}
+
 .signin-btn-header {
+  background-color: #57b7e0;
   margin-right: 30px;
   margin-left: 10px;
 }

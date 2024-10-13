@@ -37,7 +37,7 @@ const Downloads = ({ downloads }) => {
                         </div>
                     ))
                 ) : (
-                    <p className="no-downloads">You currently have no downloads available.</p>
+                    <p className="no-downloads">Looks like you don't have any downloads yet. Start exploring our library to download your favorites!</p>
                 )}
             </div>
         </div>

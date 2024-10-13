@@ -29,7 +29,7 @@ const Header = ({ query, setQuery}) => {
           </Link>
         </div>
         <div className="navbar-buttons">
-          <Link to="/register" className="btn">Create Account</Link>
+          <Link to="/register" className="btn register-btn-header">Create Account</Link>
           <Link to="/signin" className="btn signin-btn-header">Sign In</Link>
         </div>
       </nav>

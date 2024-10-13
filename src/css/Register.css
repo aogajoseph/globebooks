@@ -22,8 +22,8 @@
   
 /* Card style for the form */
 .signup-card {
-    background-color: rgba(0, 0, 0, 0.486);
-    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding: 10px 40px;
     border-radius: 8px;
     box-shadow: 0 4px 20px #57b7e093;
     width: 400px;
@@ -40,7 +40,7 @@
   
 /* Form styling */
 .signup-form .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: left;
 }
   

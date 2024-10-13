@@ -10,7 +10,7 @@
 .download-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
+    color: rgba(0, 72, 90, 0.911);
     margin-bottom: 1rem;
 }
 
@@ -79,6 +79,7 @@
 /* No downloads message */
 .no-downloads {
     font-size: 1rem;
+    font-style: italic;
     color: #777;
     text-align: center;
     margin-top: 1rem;

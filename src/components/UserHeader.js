@@ -69,7 +69,7 @@ const Header = ({ query, setQuery }) => {
     return (
         <header className='userheader'>
             <nav className='usernavbar'>
-                <div className="navbar-logo">
+                <div className="usernavbar-logo">
                     <Link to='/'>
                         <img src={Logo} alt="Logo" className="logo" />
                     </Link>
@@ -88,7 +88,7 @@ const Header = ({ query, setQuery }) => {
                     </div>
                 </div>
 
-                <div className="navbar-icons">
+                <div className="usernavbar-icons">
                     <FaBell className="notification-icon" />
 
                     <div className="profile-container" onClick={toggleMenu}> 

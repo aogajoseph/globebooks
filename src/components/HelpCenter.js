@@ -51,10 +51,9 @@ const HelpCenter = () => {
 
                 <section className="contact-section">
                     <h3><FaEnvelope /> Contact Us</h3>
-                    <p>If you can't find the answer in the FAQs, fill out the form below or reach out via email or phone:</p>
-                    <p><FaPhoneAlt /> +123-456-7890</p>
+                    <p>If you can't find answers in the FAQs, reach out to us via email by filling out the form below:</p>
                     <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="form-group">
+                        <div className="help-form-group">
                             <label>Name</label>
                             <input 
                                 type="text" 
@@ -64,7 +63,7 @@ const HelpCenter = () => {
                                 required 
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="help-form-group">
                             <label>Email</label>
                             <input 
                                 type="email" 
@@ -74,7 +73,7 @@ const HelpCenter = () => {
                                 required 
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="help-form-group">
                             <label>Message</label>
                             <textarea 
                                 placeholder="How can we help you?" 
