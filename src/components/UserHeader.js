@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaSearch, FaBell, FaDownload, FaCog, FaQuestionCircle, FaSignOutAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Logo from '../images/logo.png';
-//import ProfilePic from '../images/profile-pic.png'; // Ensure this path is correct
+import ProfilePic from '../images/profile-pic.png'; // Default Profile Picture
 import PreviewImg1 from '../images/Book1.png';
 import PreviewImg2 from '../images/Book2.png';
 import PreviewImg3 from '../images/Book3.png';
@@ -17,7 +17,7 @@ import PreviewImg11 from '../images/Book11.png';
 import PreviewImg12 from '../images/Book12.png';
 import '../css/UserHeader.css';
 
-const Header = ({ query, setQuery, username }) => {
+const Header = ({ query, setQuery, username, profilePicture }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const menuRef = useRef(null);
@@ -63,7 +63,7 @@ const Header = ({ query, setQuery, username }) => {
             setCurrentImageIndex((prevIndex) =>
                 prevIndex === images.length - 1 ? 0 : prevIndex + 1
             );
-        }, 5000); // Change image every 3 seconds
+        }, 5000); // Change image every 5 seconds
 
         return () => clearInterval(interval);
     }, [images.length]);
@@ -96,7 +96,7 @@ const Header = ({ query, setQuery, username }) => {
                     <FaBell className="notification-icon" />
 
                     <div className="profile-container" onClick={toggleMenu}> 
-                        <img src={'ProfilePic'} alt="Profile" className="profile-pic" />
+                        <img src={profilePicture || ProfilePic} alt="Profile" className="profile-pic" />
                     </div>
 
                     {isMenuOpen && (
@@ -105,13 +105,13 @@ const Header = ({ query, setQuery, username }) => {
                             <Link to="/downloads">
                                 <FaDownload className="menu-icon" /> My Downloads
                             </Link>
-                            <Link to="/account">
+                            <Link to="/settings">
                                 <FaCog className="menu-icon" /> Account Settings
                             </Link>
-                            <Link to="/support">
+                            <Link to="/help-center">
                                 <FaQuestionCircle className="menu-icon" /> Help & Support
                             </Link>
-                            <Link to="/logout">
+                            <Link to="/">
                                 <FaSignOutAlt className="menu-icon" /> Logout
                             </Link>
                         </div>

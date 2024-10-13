@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #f0e4e4;
-    padding: 20px;
+    padding: 5px;
     box-shadow: none;
     position: fixed;
     width: 100%;
@@ -42,8 +42,7 @@
 }
 
 .profile-pic {
-    width: 50px; /* Increased size */
-    height: 50px; /* Increased size */
+    max-width: 3.5rem;
     border-radius: 50%;
     object-fit: cover;
     margin-left: -10px; /* Move to the left */
