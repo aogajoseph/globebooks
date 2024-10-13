@@ -11,6 +11,7 @@ const Settings = () => {
     const [notifications, setNotifications] = useState(true);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+    const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -37,7 +38,12 @@ const Settings = () => {
             return;
         }
 
-        // Here you would add logic to update the password in your backend/Firebase
+        if (!currentPassword) {
+            alert('Please enter your current password.');
+            return;
+        }
+
+        // Add logic here to verify the current password and update the password in your backend/Firebase
         alert('Password changed successfully!');
         closePasswordModal();
     };
@@ -85,7 +91,6 @@ const Settings = () => {
                 </button>
             </div>
 
-            {/* Modal for editing profile */}
             {isEditModalOpen && (
                 <div className="modal-overlay">
                     <div className="modal">
@@ -142,6 +147,18 @@ const Settings = () => {
                     <div className="modal">
                         <h3>Change Password</h3>
                         <form className="modal-form">
+                            <div className="form-group">
+                                <label>
+                                    <FaLock className="settings-icon" /> Current Password
+                                </label>
+                                <input 
+                                    type="password" 
+                                    value={currentPassword} 
+                                    onChange={(e) => setCurrentPassword(e.target.value)} 
+                                    className="modal-input"
+                                />
+                            </div>
+
                             <div className="form-group">
                                 <label>
                                     <FaLock className="settings-icon" /> New Password

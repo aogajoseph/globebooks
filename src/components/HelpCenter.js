@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaQuestionCircle, FaEnvelope, FaPhoneAlt, FaPaperPlane } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 import '../css/HelpCenter.css';
 
 const HelpCenter = () => {
@@ -7,11 +8,31 @@ const HelpCenter = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate a successful form submission
-        setIsSubmitted(true);
+        setError(''); // Clear previous errors
+
+        const templateParams = {
+            name: name,
+            email: email,
+            message: message,
+        };
+
+        // Make sure to replace these with your actual service ID, template ID, and public key
+        emailjs.send('service_gfr02nl', 'template_n4wxvmj', templateParams, 'OmI5gEUPY_rqlGcV2')
+            .then((response) => {
+                console.log('Email successfully sent!', response.status, response.text);
+                setIsSubmitted(true);
+                setName('');
+                setEmail('');
+                setMessage('');
+            })
+            .catch((err) => {
+                console.error('Failed to send email. Error:', err);
+                setError('Failed to send the email. Please try again.');
+            });
     };
 
     return (
@@ -66,6 +87,7 @@ const HelpCenter = () => {
                             <FaPaperPlane /> Send Message
                         </button>
                         {isSubmitted && <p className="success-message">Thank you! We'll get back to you soon.</p>}
+                        {error && <p className="error-message">{error}</p>}
                     </form>
                 </section>
             </div>
