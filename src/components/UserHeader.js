@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { FaSearch, FaBell, FaDownload, FaCog, FaQuestionCircle, FaSignOutAlt } from "react-icons/fa";
+import { FaSearch, FaBell, FaDownload, FaCog, FaQuestionCircle, FaSignOutAlt, FaEnvelopeOpenText } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import Logo from '../images/logo.png';
@@ -21,8 +21,15 @@ import '../css/UserHeader.css';
 const Header = ({ query, setQuery }) => {
     const { user } = useContext(UserContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+    const [notifications, setNotifications] = useState([
+        { id: 1, text: 'New book coming soon: "The woman with a bent back"', read: false },
+        { id: 3, text: 'Update profile with your personal details.', read: false },
+        { id: 2, text: 'You currently have no downloads. Explore our library and download your favourites', read: false }
+    ]);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const menuRef = useRef(null);
+    const notificationsRef = useRef(null);
 
     const images = [
         PreviewImg1,
@@ -43,10 +50,27 @@ const Header = ({ query, setQuery }) => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const toggleNotifications = () => {
+        setIsNotificationsOpen(!isNotificationsOpen);
+    };
+
+    const markAsRead = (id) => {
+        setNotifications((prevNotifications) =>
+            prevNotifications.map((notification) =>
+                notification.id === id ? { ...notification, read: true } : notification
+            )
+        );
+    };
+
+    const unreadCount = notifications.filter((notification) => !notification.read).length;
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
                 setIsMenuOpen(false);
+            }
+            if (notificationsRef.current && !notificationsRef.current.contains(event.target)) {
+                setIsNotificationsOpen(false);
             }
         };
 
@@ -61,7 +85,7 @@ const Header = ({ query, setQuery }) => {
             setCurrentImageIndex((prevIndex) =>
                 prevIndex === images.length - 1 ? 0 : prevIndex + 1
             );
-        }, 5000); // Change image every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [images.length]);
@@ -89,7 +113,28 @@ const Header = ({ query, setQuery }) => {
                 </div>
 
                 <div className="usernavbar-icons">
-                    <FaBell className="notification-icon" />
+                    <div className="notification-wrapper" onClick={toggleNotifications}>
+                        <FaBell className="notification-icon" />
+                        {unreadCount > 0 && <span className="notification-badge">{unreadCount}</span>}
+                    </div>
+
+                    {isNotificationsOpen && (
+                        <div className="notifications-card" ref={notificationsRef}>
+                            <h4>Notifications</h4>
+                            <ul>
+                                {notifications.map((notification) => (
+                                    <li 
+                                        key={notification.id} 
+                                        className={notification.read ? 'read' : 'unread'}
+                                        onClick={() => markAsRead(notification.id)}
+                                    >
+                                        <FaEnvelopeOpenText className="notification-item-icon" />
+                                        {notification.text}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                     <div className="profile-container" onClick={toggleMenu}> 
                         <img src={user.profilePicture || ProfilePic} alt="Profile" className="userprofile-pic" />
