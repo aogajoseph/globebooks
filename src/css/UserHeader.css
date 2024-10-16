@@ -38,14 +38,14 @@
 .profile-container {
     cursor: pointer;
     position: relative;
-    margin-left: 10px; /* Adjust for spacing */
+    margin-left: 10px;
 }
 
 .userprofile-pic {
     max-width: 3.5rem;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: -10px; /* Move to the left */
+    margin-left: -10px;
     margin-right: 50px;
 }
 
@@ -159,14 +159,14 @@
     opacity: 0.75;
 }
 
-.youtube-link {
+.channel-link {
     font-weight: 550;
     font-style: italic;
     margin: 6px 0;
     color: #044a72e7;
 }
 
-.youtube-link:hover {
+.channel-link:hover {
     color: rgb(54, 54, 56);
     font-style: italic;
     font-size: 1.08rem;
@@ -279,13 +279,107 @@
     }
 }
 
+/* Media queries */
 @media only screen and (max-width: 480px) {
-    .profile-pic {
-        width: 40px;
-        height: 40px;
+    .usernavbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f0e4e4;
+        padding: 10px;
+        box-shadow: none;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .usernavbar-logo .logo {
+        width: 60px;
+        margin: auto;
+    }
+ 
+    .search-input-container {
+        position: relative;
+        width: 170px;
+        margin: 0 5px;
+    }
+
+    .notification-item-icon {
+        margin: 10px;
+        color: rgb(72, 3, 82);
+    }
+
+    .notifications-card {
+        position: absolute;
+        top: 55px;
+        right: 25%;
+        width: 250px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .userprofile-pic {
+        max-width: 3.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 1px 20px 0 1px;
+    }
+
+    .profile-container {
+        cursor: pointer;
+        position: relative;
+        margin-left: -10px;
+    }
+
+    .profile-menu {
+        position: absolute;
+        top: 65px;
+        right: 12%;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 200px;
+        z-index: 1000;
+    }
+ 
+    .userheader-content {
+        background: linear-gradient(#57b7e050, rgba(199, 81, 191, 0.678));
+        background-size: cover;
+        background-position: center;
+        text-align: left;
+        padding: 3rem 1rem;
+        margin-bottom: -40px;
     }
     
-    .notification-icon {
-        margin-right: 10px;
+    .userheader-title {
+        padding-top: 3rem;
+        font-size: 1.8rem;
+        color: rgba(0, 72, 90, 0.911);
+    }
+    
+    .userheader-description {
+        font-size: 1.2rem;
+        max-width: 50%;
+        line-height: 1.8;
+        margin-top: .5rem;
+        color: rgb(0, 11, 14);
+        opacity: 0.75;
+    }
+
+    .slideshow {
+        position: absolute;
+        top: 23%;
+        right: 1rem;
+        width: auto;
+        height: 250px; 
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 }

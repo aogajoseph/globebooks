@@ -138,11 +138,12 @@ const Register = () => {
                 required
               />
               <label htmlFor="accept-terms">
-                Accept the <a href={Terms} className="terms-link" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                Accept our <a href={Terms} className="terms-link" target="_blank" rel="noopener noreferrer">Terms of Service</a>
               </label>
             </div>
 
             {error && <p className="error-message">{error}</p>}
+            
             <button type="submit" className="signup-btn" disabled={!acceptTerms}>
               Create Account
             </button>

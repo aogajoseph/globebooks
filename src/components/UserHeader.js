@@ -102,7 +102,7 @@ const Header = ({ query, setQuery }) => {
                         <input 
                             type="text" 
                             className="search-input" 
-                            placeholder="Search book by title..." 
+                            placeholder="Search by title..." 
                             value={query} 
                             onChange={(e) => setQuery(e.target.value)} 
                         />
@@ -162,7 +162,7 @@ const Header = ({ query, setQuery }) => {
             <div className="userheader-content">
                 <h1 className="userheader-title">Welcome, {user.username}.</h1>
                 <p className="userheader-description">
-                    Explore our library, Download your favourites or watch the stories come to life on <a href='https://youtube.com' className='youtube-link'>Globebooks</a> YouTube Channel.
+                    Explore our library, Download your favourites or watch the stories come to life on <a href='https://youtube.com' className='channel-link'>Globebooks</a> YouTube Channel.
                 </p>
             </div>
 

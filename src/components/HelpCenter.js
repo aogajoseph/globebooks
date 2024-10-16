@@ -40,7 +40,7 @@ const HelpCenter = () => {
             <h2 className="help-title">Help & Support</h2>
             <div className="help-content">
                 <section className="faq-section">
-                    <h3><FaQuestionCircle /> Frequently Asked Questions</h3>
+                    <h3><FaQuestionCircle font-size={35} /> Frequently Asked Questions</h3>
                     <ul>
                         <li>How do I download a book?</li>
                         <li>How can I reset my password?</li>
@@ -57,7 +57,7 @@ const HelpCenter = () => {
                             <label>Name</label>
                             <input 
                                 type="text" 
-                                placeholder="Your Name" 
+                                placeholder="Full Names" 
                                 value={name} 
                                 onChange={(e) => setName(e.target.value)} 
                                 required 
@@ -67,7 +67,7 @@ const HelpCenter = () => {
                             <label>Email</label>
                             <input 
                                 type="email" 
-                                placeholder="Your Email" 
+                                placeholder="Email Address" 
                                 value={email} 
                                 onChange={(e) => setEmail(e.target.value)} 
                                 required 
@@ -76,14 +76,14 @@ const HelpCenter = () => {
                         <div className="help-form-group">
                             <label>Message</label>
                             <textarea 
-                                placeholder="How can we help you?" 
+                                placeholder="Type your querry here..." 
                                 value={message} 
                                 onChange={(e) => setMessage(e.target.value)} 
                                 required 
                             ></textarea>
                         </div>
                         <button type="submit" className="submit-btn">
-                            <FaPaperPlane /> Send Message
+                            <FaPaperPlane /> Submit
                         </button>
                         {isSubmitted && <p className="success-message">Thank you! We'll get back to you soon.</p>}
                         {error && <p className="error-message">{error}</p>}

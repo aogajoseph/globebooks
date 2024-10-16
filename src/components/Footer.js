@@ -24,8 +24,8 @@ const Footer = () => {
                     </div>
                     <div className="footer-links-div">
                         <h4>Important Links</h4>
-                        <a href="register" className="important-links"><p>Create Account</p></a>
-                        <a href="signin" className="important-links"><p>Sign In</p></a>
+                        <Link to='/register'  className="important-links"><p>Create Account</p></Link>
+                        <Link to='/signin'  className="important-links"><p>Sign In</p></Link>
                     </div>
                     <div className="footer-links-div">
                         <h4>Get in Touch</h4>

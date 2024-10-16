@@ -120,3 +120,41 @@ textarea {
     color: #09662d;
     font-size: 0.9rem;
 }
+
+/* Media queries */
+@media only screen and (max-width: 480px) {
+    .help-container {
+        margin: 2rem 2rem;
+        max-width: 600px;
+        padding: 2rem;
+        border-radius: 10px;
+        background-color: #f7f7f7;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }       
+
+    .help-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: rgba(0, 72, 90, 0.911);
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .faq-section h3 {
+        font-size: 1rem;
+        color: #0077b6;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .contact-section h3 {
+        font-size: 1.2rem;
+        color: rgba(0, 72, 90, 0.911);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}

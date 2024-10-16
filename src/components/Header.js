@@ -47,7 +47,7 @@ const Header = ({ query, setQuery}) => {
             <input 
               type="text" 
               className="search-input" 
-              placeholder="Search book by title..." 
+              placeholder="Search by title..." 
               value={query} 
               onChange={(e) => setQuery(e.target.value)} 
             />
