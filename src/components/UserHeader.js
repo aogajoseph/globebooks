@@ -23,9 +23,7 @@ const Header = ({ query, setQuery }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
     const [notifications, setNotifications] = useState([
-        { id: 1, text: 'New book coming soon: "The woman with a bent back"', read: false },
-        { id: 3, text: 'Update profile with your personal details.', read: false },
-        { id: 2, text: 'You currently have no downloads. Explore our library and download your favourites', read: false }
+        { id: 1, text: 'New book coming soon: "The woman with a bent back"', read: false }
     ]);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const menuRef = useRef(null);
@@ -136,7 +134,7 @@ const Header = ({ query, setQuery }) => {
                         </div>
                     )}
 
-                    <div className="profile-container" onClick={toggleMenu}> 
+                    <div className="profile-container" onClick={toggleMenu}>
                         <img src={user.profilePicture || ProfilePic} alt="Profile" className="userprofile-pic" />
                     </div>
 
@@ -162,7 +160,7 @@ const Header = ({ query, setQuery }) => {
             </nav>
 
             <div className="userheader-content">
-                <h1 className="userheader-title">Welcome {user.username}</h1>
+                <h1 className="userheader-title">Welcome, {user.username}.</h1>
                 <p className="userheader-description">
                     Explore our library, Download your favourites or watch the stories come to life on <a href='https://youtube.com' className='youtube-link'>Globebooks</a> YouTube Channel.
                 </p>

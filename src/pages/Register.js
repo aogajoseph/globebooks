@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Terms from '../images/Terms.pdf';
 import '../css/Register.css';
 
@@ -14,7 +14,15 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(null); // State for profile picture
   const navigate = useNavigate();
+
+  const handleProfilePictureChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProfilePicture(file);
+    }
+  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -30,10 +38,14 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
+      // Prepare the profile picture URL or placeholder
+      const profilePictureURL = profilePicture ? URL.createObjectURL(profilePicture) : null;
+
       // Store additional user data in Firestore
       await setDoc(doc(db, "users", user.uid), {
         username: username,
         email: user.email,
+        profilePicture: profilePictureURL,
         createdAt: new Date()
       });
 
@@ -108,6 +120,15 @@ const Register = () => {
               </div>
             </div>
 
+            <div className="form-group">
+              <label>Profile Picture (Optional)</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleProfilePictureChange}
+              />
+            </div>
+
             <div className="form-group terms-div">
               <input
                 type="checkbox"
@@ -123,8 +144,8 @@ const Register = () => {
 
             {error && <p className="error-message">{error}</p>}
             <button type="submit" className="signup-btn" disabled={!acceptTerms}>
-              <Link to='/user'></Link>
-              Create Account</button>
+              Create Account
+            </button>
           </form>
           <p className="signup-text">
             <span>Creating an account on Globebooks is free and allows you to download eBooks and audiobooks.</span>

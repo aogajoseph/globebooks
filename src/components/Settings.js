@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react';
+import { auth, db } from '../firebase';
+import { doc, setDoc } from 'firebase/firestore';
 import { FaUser, FaEnvelope, FaLock, FaBell, FaEdit, FaCamera } from 'react-icons/fa';
 import { UserContext } from '../contexts/UserContext';
 import '../css/Settings.css';
@@ -26,9 +28,24 @@ const Settings = () => {
         setProfilePicture(URL.createObjectURL(file));
     };
 
-    const handleSaveChanges = () => {
-        setUser({ ...user, username, email, profilePicture });
-        alert('Profile updated successfully!');
+    const handleSaveChanges = async () => {
+        try {
+            const currentUser = auth.currentUser;
+            if (currentUser) {
+                // Update Firestore with new details
+                await setDoc(doc(db, 'users', currentUser.uid), {
+                    username: username,
+                    email: email,
+                    profilePicture: profilePicture || null,
+                }, { merge: true });
+    
+                setUser({ ...user, username, email, profilePicture });
+                alert('Profile updated successfully!');
+            }
+        } catch (error) {
+            console.error('Error updating profile:', error);
+        }
+    
         closeEditModal();
     };    
 

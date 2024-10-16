@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaQuestionCircle, FaEnvelope, FaPhoneAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaQuestionCircle, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import '../css/HelpCenter.css';
 
