@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/globebooks/static/css/main.313ce8ff.css",
-    "main.js": "/globebooks/static/js/main.5cb6de47.js",
+    "main.css": "/globebooks/static/css/main.a9fc1502.css",
+    "main.js": "/globebooks/static/js/main.fbece79d.js",
     "static/js/453.b71f9089.chunk.js": "/globebooks/static/js/453.b71f9089.chunk.js",
     "static/media/Book10.png": "/globebooks/static/media/Book10.8212071f0d9c477b0ecf.png",
     "static/media/Book8.png": "/globebooks/static/media/Book8.9c2b09d4131079203e82.png",
@@ -22,12 +22,12 @@
     "static/media/Cookie.pdf": "/globebooks/static/media/Cookie.8c18a06b000e6d8595ae.pdf",
     "static/media/header-bg.jpg": "/globebooks/static/media/header-bg.d3cabccfff25a737c222.jpg",
     "index.html": "/globebooks/index.html",
-    "main.313ce8ff.css.map": "/globebooks/static/css/main.313ce8ff.css.map",
-    "main.5cb6de47.js.map": "/globebooks/static/js/main.5cb6de47.js.map",
+    "main.a9fc1502.css.map": "/globebooks/static/css/main.a9fc1502.css.map",
+    "main.fbece79d.js.map": "/globebooks/static/js/main.fbece79d.js.map",
     "453.b71f9089.chunk.js.map": "/globebooks/static/js/453.b71f9089.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.313ce8ff.css",
-    "static/js/main.5cb6de47.js"
+    "static/css/main.a9fc1502.css",
+    "static/js/main.fbece79d.js"
   ]
 }
