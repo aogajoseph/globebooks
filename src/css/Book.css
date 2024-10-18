@@ -197,11 +197,10 @@
     }
 }
   
-  /* For extra small devices like phones in portrait mode */
-  @media only screen and (max-width: 480px) {
+/* Media Query for Tablets (768px and below) */
+@media only screen and (max-width: 768px) {
     .book {
         position: relative;
-        width: 250px;
         padding: 1rem;
         background-color: #fff;
         border-radius: 10px;
@@ -213,8 +212,57 @@
         margin: 0 15px;
     }
 
+    .books {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 5rem auto;
+        justify-content: space-around;
+    }
+
     .cover {
-        width: 75%;
+        width: 50%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 1px;
+        margin: 0.8rem 1.25rem;
+    }
+
+    .navbar-logo .logo {
+        width: 60px;
+        margin: 0 100px 0 20px;
+    }
+}
+
+/* For extra small devices like phones in portrait mode */
+@media only screen and (max-width: 480px) {
+    .book {
+        position: relative;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.2s ease-in-out;
+        margin: 0 15px;
+    }
+
+    .books {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 5rem auto;
+        justify-content: space-around;
+    }
+
+    .cover {
+        width: 50%;
         height: 180px;
         object-fit: cover;
         border-radius: 1px;

@@ -44,13 +44,6 @@
     text-align: left;
 }
   
-.signin-form label {
-    display: block;
-    font-weight: normal;
-    margin-bottom: 5px;
-    color: #ece2e2;
-}
-  
 .signin-form input {
     width: 92%;
     padding: 12px 15px;
@@ -142,14 +135,6 @@
         margin-bottom: 18px;
         color: #57b7e0;
         font-weight: bold;
-    }
-
-    .signin-form label {
-        display: block;
-        font-size: .8rem;
-        font-weight: normal;
-        margin-bottom: 2px;
-        color: #ece2e2;
     }
 
     .signin-text {

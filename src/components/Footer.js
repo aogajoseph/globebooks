@@ -32,7 +32,7 @@ const Footer = () => {
                         <p>Remote</p>
                         <a href="mailto:globeheadquarters@gmail.com" className="important-links"><p>globeheadquarters@gmail.com</p></a>
                     </div>
-                    <div className="footer-links-div">
+                    <div className="footer-links-div socials">
                         <h4>Stay Connected</h4>
                         <div className ="social-media">
                             <FaYoutubeSquare className="youtube social-links"/>

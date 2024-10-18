@@ -10,7 +10,7 @@
 }
 
 /* Navbar styles */
-.navbar {
+.headernavbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,18 +25,18 @@
   z-index: 1000;
 }
 
-.navbar.scrolled {
+.headernavbar.scrolled {
   background-color: #f0e4e4;
   padding: 10px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-logo .logo {
+.headernavbar-logo .logo {
   width: 100px;
   margin: 0 30px;
 }
 
-.navbar-buttons .btn {
+.headernavbar-buttons .btn {
   border: 2px solid white;
   color: #000000;
   padding: 10px 20px;
@@ -46,7 +46,7 @@
   font-size: 14px;
 }
 
-.navbar-buttons .btn:hover {
+.headernavbar-buttons .btn:hover {
   color: white;
   background-color: rgb(150, 139, 139);
 }
@@ -74,25 +74,25 @@
 
 .header-description {
   font-size: 1.2rem;
-  margin-top: 2.5rem;
+  margin-top: -1rem;
   color: whitesmoke;
   opacity: 0.75;
 }
 
 /* Search bar styling */
-.search-bar {
+.headersearch-bar {
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
-.search-input-container {
+.headersearch-input-container {
   position: relative;
   width: 600px;
   margin: 0 auto;
 }
 
-.search-input {
+.headersearch-input {
   width: 100%;
   padding: 10px 40px 10px 15px;
   font-size: 16px;
@@ -101,11 +101,11 @@
   box-sizing: border-box;
 }
 
-.search-input::placeholder {
+.headersearch-input::placeholder {
   color: rgb(177, 156, 156);
 }
 
-.search-icon {
+.headersearch-icon {
   position: absolute;
   padding-right: 8px;
   right: 10px;
@@ -118,7 +118,38 @@
 
 /* Media Query for Tablets (768px and below) */
 @media only screen and (max-width: 768px) {
-  
+  .header {
+    padding: 20px 10 px;
+  }
+
+  .header-content {
+    margin-top: 100px;
+  }  
+
+  .header-title {
+    font-size: 1.8rem;
+  }
+
+  .header-description {
+    padding: 0 20px;
+    line-height: 1.25;
+    font-size: 1.2rem;
+    margin-top: -.25rem;
+    margin-bottom: 2rem;
+    color: whitesmoke;
+    opacity: 0.75;
+  }
+
+  .headernavbar-logo .logo {
+    padding-top: 10px;
+    width: 60px;
+  }
+
+  .headernavbar-buttons .btn {
+    font-size: 10px;
+    padding: 6px 10px;
+    margin-left: 10px;
+  }
 }
 
 /* Media Query for Mobile Devices (600px and below) */
@@ -150,12 +181,12 @@
     opacity: 0.75;
   }
 
-  .navbar-logo .logo {
+  .headernavbar-logo .logo {
     padding-top: 10px;
-    width: 20px;
+    width: 60px;
   }
 
-  .navbar-buttons .btn {
+  .headernavbar-buttons .btn {
     font-size: 10px;
     padding: 6px 10px;
     margin-left: 10px;

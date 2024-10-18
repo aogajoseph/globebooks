@@ -85,31 +85,28 @@ const Register = () => {
           <h2 className="signup-title">Create Account</h2>
           <form className="signup-form" onSubmit={handleRegister}>
             <div className="form-group">
-              <label>Username</label>
               <input
                 type="text"
-                placeholder="Create a username..."
+                placeholder="Create username..."
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
             <div className="form-group">
-              <label>Email</label>
               <input
                 type="email"
-                placeholder="Enter your email..."
+                placeholder="Enter email..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="form-group">
-              <label>Password</label>
               <div className="password-input-wrapper">
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  placeholder="Create a password..."
+                  placeholder="Create password..."
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -121,7 +118,7 @@ const Register = () => {
             </div>
 
             <div className="form-group">
-              <label>Profile Picture (Optional)</label>
+              <label>Upload Profile Photo (Optional)</label>
               <input
                 type="file"
                 accept="image/*"

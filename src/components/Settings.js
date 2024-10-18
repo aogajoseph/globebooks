@@ -115,7 +115,7 @@ const Settings = () => {
                         <form className="modal-form">
                             <div className="form-group">
                                 <label>
-                                    <FaUser className="settings-icon" /> Username
+                                    <FaUser className="settings-icon" /> Update Username
                                 </label>
                                 <input 
                                     type="text" 
@@ -127,7 +127,7 @@ const Settings = () => {
 
                             <div className="form-group">
                                 <label>
-                                    <FaEnvelope className="settings-icon" /> Email
+                                    <FaEnvelope className="settings-icon" /> Update Primary Email
                                 </label>
                                 <input 
                                     type="email" 
@@ -139,7 +139,7 @@ const Settings = () => {
 
                             <div className="form-group">
                                 <label>
-                                    <FaCamera className="settings-icon" /> Profile Picture
+                                    <FaCamera className="settings-icon" /> Update Profile Picture
                                 </label>
                                 <input 
                                     type="file" 

@@ -22,13 +22,13 @@ const Header = ({ query, setQuery}) => {
   return (
     <header className='header'>
       {/* Navbar */}
-      <nav className= {`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="navbar-logo">
+      <nav className= {`headernavbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="headernavbar-logo">
           <Link to='/'>
             <img src={Logo} alt="Logo" className="logo" />
           </Link>
         </div>
-        <div className="navbar-buttons">
+        <div className="headernavbar-buttons">
           <Link to="/register" className="btn register-btn-header">Create Account</Link>
           <Link to="/signin" className="btn signin-btn-header">Sign In</Link>
         </div>
@@ -42,16 +42,16 @@ const Header = ({ query, setQuery}) => {
         </p>
 
         {/* Search Input */}
-        <div className="search-bar">
-          <div className='search-input-container'>
+        <div className="headersearch-bar">
+          <div className='headersearch-input-container'>
             <input 
               type="text" 
-              className="search-input" 
+              className="headersearch-input" 
               placeholder="Search by title..." 
               value={query} 
               onChange={(e) => setQuery(e.target.value)} 
             />
-            <FaSearch className="search-icon" />
+            <FaSearch className="headersearch-icon" />
           </div>
         </div>
       </div>

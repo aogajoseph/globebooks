@@ -55,7 +55,6 @@ const SignIn = () => {
           <h2 className="signin-title">Sign In</h2>
           <form className="signin-form" onSubmit={handleSignIn}>
             <div className="form-group">
-              <label>Email</label>
               <input
                 type="email"
                 placeholder="Enter your email..."
@@ -65,7 +64,6 @@ const SignIn = () => {
               />
             </div>
             <div className="form-group">
-              <label>Password</label>
               <div className="password-input-wrapper">
                 <input
                   type={showPassword ? 'text' : 'password'}

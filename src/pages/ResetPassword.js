@@ -32,26 +32,28 @@ const ResetPassword = () => {
 
   return (
     <div className="reset-password-container">
-      <div className="reset-password-card">
-        <h2 className="reset-password-title">Reset Password</h2>
-        <form className="reset-password-form" onSubmit={handleResetPassword}>
-          <div className="form-group">
-            <label>Enter your email to get a password reset link</label>
-            <input
-              type="email"
-              placeholder="Enter email..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          {error && <p className="error-message">{error}</p>} {/* Display custom error message */}
-          {message && <p className="success-message">{message}</p>} {/* Display success message */}
-          <button type="submit" className="reset-password-btn">Get Link</button>
-        </form>
-        <p className="reset-password-text">
-          Remembered your password? <Link to="/signin" className="signin-link">Sign In</Link>
-        </p>
+      <div className="reset-password-background">
+        <div className="reset-password-card">
+          <h2 className="reset-password-title">Reset Password</h2>
+          <form className="reset-password-form" onSubmit={handleResetPassword}>
+            <div className="form-group">
+              <label>We'll send you the password reset link</label>
+              <input
+                type="email"
+                placeholder="Enter your email..."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            {error && <p className="error-message">{error}</p>} {/* Display custom error message */}
+            {message && <p className="success-message">{message}</p>} {/* Display success message */}
+            <button type="submit" className="reset-password-btn">Get Link</button>
+          </form>
+          <p className="reset-password-text">
+            Remembered your password? <Link to="/signin" className="signin-link">Sign In</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
