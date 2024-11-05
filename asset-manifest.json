@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/globebooks/static/css/main.8ccafc23.css",
-    "main.js": "/globebooks/static/js/main.d335ce6d.js",
+    "main.css": "/globebooks/static/css/main.7ae6a805.css",
+    "main.js": "/globebooks/static/js/main.424ad16d.js",
     "static/js/453.b71f9089.chunk.js": "/globebooks/static/js/453.b71f9089.chunk.js",
     "static/media/Book10.png": "/globebooks/static/media/Book10.8212071f0d9c477b0ecf.png",
     "static/media/Book8.png": "/globebooks/static/media/Book8.9c2b09d4131079203e82.png",
@@ -20,14 +20,14 @@
     "static/media/Privacy.pdf": "/globebooks/static/media/Privacy.55a734f9361a5ae0e3f9.pdf",
     "static/media/profile-pic.png": "/globebooks/static/media/profile-pic.dcb7d3eb1cc571896939.png",
     "static/media/Cookie.pdf": "/globebooks/static/media/Cookie.8c18a06b000e6d8595ae.pdf",
-    "static/media/header-bg.jpg": "/globebooks/static/media/header-bg.d3cabccfff25a737c222.jpg",
+    "static/media/hero-bg.jpg": "/globebooks/static/media/hero-bg.d3cabccfff25a737c222.jpg",
     "index.html": "/globebooks/index.html",
-    "main.8ccafc23.css.map": "/globebooks/static/css/main.8ccafc23.css.map",
-    "main.d335ce6d.js.map": "/globebooks/static/js/main.d335ce6d.js.map",
+    "main.7ae6a805.css.map": "/globebooks/static/css/main.7ae6a805.css.map",
+    "main.424ad16d.js.map": "/globebooks/static/js/main.424ad16d.js.map",
     "453.b71f9089.chunk.js.map": "/globebooks/static/js/453.b71f9089.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ccafc23.css",
-    "static/js/main.d335ce6d.js"
+    "static/css/main.7ae6a805.css",
+    "static/js/main.424ad16d.js"
   ]
 }
