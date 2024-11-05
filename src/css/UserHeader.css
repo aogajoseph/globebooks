@@ -595,7 +595,7 @@
     .userheader-description {
         font-size: 1.2rem;
         padding: 0 0 0 2rem;
-        max-width: 60%;
+        max-width: 60 %;
         line-height: 1.8;
         margin-top: .5rem;
         color: rgb(0, 11, 14);

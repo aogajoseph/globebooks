@@ -24,7 +24,7 @@ const Shelf = ({ query }) => {
                     <Book key={index} book={book} query={query} /> 
                 ))
             ) : ( 
-                <p className="error-message">Oops! No results matched your querry.</p> 
+                <p className="error-message">Oops! Not found.</p> 
             )}
         
         </div>

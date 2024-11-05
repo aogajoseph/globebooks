@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import UserPage from './pages/UserPage';
@@ -13,7 +14,7 @@ import Footer from './components/Footer';
 import { UserProvider } from './contexts/UserContext';
 
 const App = () => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(''); 
 
   return (
     <UserProvider>
@@ -21,7 +22,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
-              <Header query={query} setQuery={setQuery} />
+              <Navbar />
+              <Hero query={query} setQuery={setQuery} />  {/* Pass both query and setQuery to Hero */}
               <Shelf query={query} />
               <Footer />
             </>
