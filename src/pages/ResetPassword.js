@@ -37,10 +37,10 @@ const ResetPassword = () => {
           <h2 className="reset-password-title">Reset Password</h2>
           <form className="reset-password-form" onSubmit={handleResetPassword}>
             <div className="form-group">
-              <label>We'll send you the password reset link</label>
+              <label>Where should we send the password reset link?</label>
               <input
                 type="email"
-                placeholder="Enter your email..."
+                placeholder="Enter email address..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

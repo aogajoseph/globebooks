@@ -146,9 +146,6 @@ const Register = () => {
             </button>
           </form>
           <p className="signup-text">
-            <span>Creating an account on Globebooks is free and allows you to download eBooks and audiobooks.</span>
-            <br />
-            <br />
             Already have an account? <Link to="/signin" className="signin-link">Sign In</Link>
           </p>
         </div>

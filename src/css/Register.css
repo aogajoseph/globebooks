@@ -22,41 +22,45 @@
   
 /* Card style for the form */
 .signup-card {
-    background-color: rgba(0, 0, 0, 0.185);
-    padding: 1px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px #57b7e093;
     width: 400px;
+    margin: 50px auto;
+    padding: 20px 40px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 0px;
+    box-shadow: 0 4px 20px #57b7e06c;
+    width: auto;
     text-align: center;
 }
   
 /* Form title */
 .signup-title {
+    text-align: center;
     font-size: 1.8rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #57b7e0;
     font-weight: bold;
 }
   
 /* Form styling */
 .signup-form .form-group {
-    margin-bottom: 20px;
     text-align: left;
 }
   
 .signup-form label {
     display: block;
     font-weight: normal;
-    margin-bottom: 5px;
+    margin: 10px 0 0 0;
     color: #ece2e2;
 }
   
 .signup-form input {
-    width: 92%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 1rem;
+    width: 100%;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -72,19 +76,18 @@
 }
   
 .password-input-wrapper input {
-    width: 92%;
+    width: 100%;
 }
   
 .password-toggle-icon {
     position: absolute;
-    right: 30px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: #5a5858;
 }
   
-
 ::placeholder {
     color: rgba(92, 91, 91, 0.856);
     font-style: italic;
@@ -93,15 +96,16 @@
   
 /* Button styling */
 .signup-btn {
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
     background-color: rgba(199, 81, 191, 0.678);
     color: rgb(241, 235, 235);
-    padding: 15px 0;
     width: 100%;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
   
 .signup-btn:hover {
@@ -142,12 +146,14 @@
 }
 
 input[type="checkbox"] {
-    margin: 1px 2px 0 10px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .terms-div label {
     display: block;
-    margin: 1px 10px;
+    margin: 10px 10px;
     color: #ece2e2;
 }
 
@@ -156,22 +162,21 @@ input[type="checkbox"] {
     .signup-card {
         background-color: rgba(0, 0, 0, 0.185);
         padding: 1px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 20px #c51bb783;
         width: 300px;
         margin: auto;
         text-align: center;
     }
 
     .signup-title {
+        text-align: center;
         font-size: 1.8rem;
-        margin-bottom: 18px;
+        margin: 20px 0;
         color: #57b7e0;
         font-weight: bold;
     }
     
     .signup-text {
-        margin-top: 30px;
+        margin: 20px 0;
         font-size: .8rem;
         color: #e6dcdc;
     }
@@ -179,8 +184,6 @@ input[type="checkbox"] {
     .signup-btn {
         background-color: rgba(199, 81, 191, 0.678);
         color: rgb(241, 235, 235);
-        padding: 15px 0;
-        width: 75%;
         border: none;
         border-radius: 4px;
         font-size: 1rem;
