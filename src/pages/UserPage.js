@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from '../components/UserHeader';
+import InnerNavbar from '../components/InnerNavbar';
+import InnerHero from '../components/InnerHero';
 import Shelf from '../components/UserShelf';
 import Footer from '../components/Footer';
 import { books } from '../data/books';
@@ -10,11 +11,12 @@ const UserPage = ({ username }) => {
 
   return (
     <div>
-      <Header query={query} setQuery={setQuery} />
+      <InnerNavbar query={query} setQuery={setQuery} />
+      <InnerHero />
       <Shelf books={books} query={query} /> {/* Pass books and query */}
       <Footer />
     </div>
   );
 };
 
-export default UserPage;
+export default UserPage;

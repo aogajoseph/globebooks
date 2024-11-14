@@ -6,10 +6,7 @@ import '../css/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -20,25 +17,23 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="navbar-logo">
-          <Link to='/'>
-            <img src={Logo} alt="Logo" className="logo" />
-          </Link>
-        </div>
-        <FaAlignRight className='navbar-toggler'  onClick={toggleMenu} />
-        <div className={`navbar-buttons  navbar-links ${isOpen ? 'active' : ''}`}>
-            <Link to="/register" className="btn">Create Account</Link>
-            <Link to="/signin" className="btn signin-btn-header">Sign In</Link>
-        </div>
+      <div className="navbar-logo">
+        <Link to='/'>
+          <img src={Logo} alt="Logo" className="logo" />
+        </Link>
+      </div>
+      <FaAlignRight className="navbar-toggler" onClick={toggleMenu} />
+      <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+        <Link to="/register" className="btn">Create Account</Link>
+        <Link to="/signin" className="btn signin-btn-header">Sign In</Link>
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
